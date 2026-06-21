@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>南宫28 · 站点介绍</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background-color: #f4f6fa;
+      line-height: 1.7;
+      color: #1e2a3a;
+    }
+
+    /* 深色头图 */
+    .hero {
+      background: linear-gradient(145deg, #0b1a2b 0%, #1b2f44 100%);
+      padding: 3.5rem 1.5rem 3rem;
+      text-align: center;
+      color: #e6edf5;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero .tagline {
+      font-size: 1.1rem;
+      color: #b0c9e0;
+      max-width: 640px;
+      margin: 0 auto 1.2rem;
+    }
+
+    .hero .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 0.3rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      color: #cbddee;
+      letter-spacing: 0.3px;
+    }
+
+    /* 顶部导航 */
+    .nav-bar {
+      display: flex;
+      justify-content: center;
+      gap: 2.2rem;
+      flex-wrap: wrap;
+      padding: 1.2rem 1rem 0.6rem;
+      background: #0f2336;
+    }
+
+    .nav-bar a {
+      color: #dde6ef;
+      text-decoration: none;
+      font-size: 0.95rem;
+      padding: 0.3rem 0.2rem;
+      border-bottom: 2px solid transparent;
+      transition: 0.2s;
+    }
+
+    .nav-bar a:hover {
+      border-bottom-color: #6ba2d9;
+      color: #ffffff;
+    }
+
+    .nav-bar .brand-link {
+      font-weight: 500;
+      color: #9bc3f0;
+    }
+
+    /* 主容器 */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3.5rem;
+    }
+
+    /* 介绍段 */
+    .intro-block {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 2.2rem 2rem;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+      margin-bottom: 2.8rem;
+    }
+
+    .intro-block h2 {
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: #0f2336;
+      margin-bottom: 1rem;
+    }
+
+    .intro-block p {
+      margin-bottom: 1.1rem;
+      font-size: 1rem;
+    }
+
+    .intro-block a {
+      color: #1e6fa8;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dotted #9fc3e0;
+    }
+
+    .intro-block a:hover {
+      color: #0a4c7a;
+      border-bottom-color: #1e6fa8;
+    }
+
+    /* 三个场景模块 */
+    .scenes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+      margin-bottom: 2.8rem;
+    }
+
+    .scene-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.8rem 1.6rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+      border: 1px solid #e8edf4;
+      transition: 0.2s;
+    }
+
+    .scene-card:hover {
+      border-color: #b8cfeb;
+      box-shadow: 0 8px 18px rgba(0, 40, 80, 0.06);
+    }
+
+    .scene-card .icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .scene-card h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      color: #0f2336;
+    }
+
+    .scene-card p {
+      color: #2f4055;
+      font-size: 0.95rem;
+    }
+
+    /* 常见说明 — 简约FAQ摘要 */
+    .faq-summary {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 2rem 2rem 1.8rem;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+      margin-bottom: 2.5rem;
+    }
+
+    .faq-summary h2 {
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: #0f2336;
+      margin-bottom: 1.4rem;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #e4eaf2;
+      padding: 0.9rem 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-item .q {
+      font-weight: 500;
+      color: #1b2f44;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-item .a {
+      color: #3b5068;
+      font-size: 0.95rem;
+    }
+
+    .faq-item .a a {
+      color: #1e6fa8;
+      text-decoration: none;
+      border-bottom: 1px dotted #b0c9e0;
+    }
+
+    .faq-item .a a:hover {
+      color: #0a4c7a;
+    }
+
+    /* 提示轻卡片 */
+    .note-box {
+      background: #eaf1fa;
+      border-left: 5px solid #4a80b4;
+      border-radius: 16px;
+      padding: 1.2rem 1.6rem;
+      color: #1a3149;
+      font-size: 0.95rem;
+      margin-top: 1.2rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .note-box strong {
+      color: #0f2b44;
+    }
+
+    /* 页脚 */
+    .footer {
+      text-align: center;
+      padding: 1.8rem 1rem 1.2rem;
+      color: #5a6f85;
+      font-size: 0.85rem;
+      border-top: 1px solid #dce3ed;
+    }
+
+    .footer a {
+      color: #2c628b;
+      text-decoration: none;
+    }
+
+    /* 响应式 */
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+      .nav-bar {
+        gap: 1.2rem;
+      }
+      .intro-block, .faq-summary {
+        padding: 1.5rem 1.2rem;
+      }
+      .scenes-grid {
+        gap: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 顶部导航 -->
+  <div class="nav-bar">
+    <a href="#" class="brand-link">首页</a>
+    <a href="#">介绍</a>
+    <a href="#">场景</a>
+    <a href="#">说明</a>
+    <a href="#">联系</a>
+  </div>
+
+  <!-- 深色头图 -->
+  <section class="hero">
+    <h1>南宫28 · 轻量导航</h1>
+    <p class="tagline">一份关于站点背景与可信角度的简明介绍，帮助新朋友快速了解「南宫28」</p>
+    <span class="badge">站点 · 导航概要</span>
+  </section>
+
+  <!-- 主内容 -->
+  <div class="container">
+
+    <!-- 核心介绍 -->
+    <div class="intro-block">
+      <h2>关于「南宫28」</h2>
+      <p>
+        在信息繁杂的线上环境里，一个清晰、可靠的站点入口显得尤为重要。<strong>南宫28</strong> 正是基于这样的想法而存在——它整合了常用功能与资讯入口，并以简洁的方式呈现给有需要的用户。无论你是初次接触，还是想进一步了解其定位，这个页面都可以作为你的起点。
+      </p>
+      <p>
+        我们始终认为，一个平台的价值不在于浮夸的宣传，而在于它是否值得信任、是否稳定可用。如果你希望深入了解或使用，可以直接访问 
+        <a href="https://panel-nangong28.com">南宫28</a>。那里提供了更完整的功能与说明，你也可以在体验后形成自己的判断。
+      </p>
+      <p>
+        从站点导航到日常参考，这个介绍页力求以真实、克制的口吻为你描绘出「南宫28」的基本面貌，没有夸大的承诺，只有如实的信息。
+      </p>
+    </div>
+
+    <!-- 三个场景模块 -->
+    <div class="scenes-grid">
+      <div class="scene-card">
+        <div class="icon">📋</div>
+        <h3>信息查阅</h3>
+        <p>当你想快速了解某个方向或条目时，可以通过「南宫28」找到结构化的参考，省去四处翻找的时间。</p>
+      </div>
+      <div class="scene-card">
+        <div class="icon">🔗</div>
+        <h3>日常导航</h3>
+        <p>收藏一个稳定的链接，日常需要时直接打开。无论是工作间隙还是个人浏览，随时可以回到这个熟悉的页面。</p>
+      </div>
+      <div class="scene-card">
+        <div class="icon">🧭</div>
+        <h3>初步接触</h3>
+        <p>如果你刚听说「南宫28」，不妨先通过这个介绍页了解它的定位与风格，再决定是否进一步探索。</p>
+      </div>
+    </div>
+
+    <!-- 常见说明（FAQ 摘要） -->
+    <div class="faq-summary">
+      <h2>常见说明</h2>
+
+      <div class="faq-item">
+        <div class="q">「南宫28」是一个什么样的站点？</div>
+        <div class="a">它更像一个功能型导航与信息整合页面，提供清晰的基础入口与内容指引。具体细节可参考 
+          <a href="https://panel-nangong28.com">南宫28</a> 上的实际页面。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="q">使用这个站点需要注册或付费吗？</div>
+        <div class="a">根据目前公开信息，基础浏览与导航功能无需额外付费。建议以实际页面展示为准，避免轻信未经核实的信息。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="q">如何判断这个站点是否可靠？</div>
+        <div class="a">你可以先浏览公开内容，观察其信息组织方式与更新频率。任何平台都建议亲自体验、多方比对后再做判断。如有疑问，可随时通过站内渠道核实。</div>
+      </div>
+
+      <div class="note-box">
+        <strong>💡 一个小提示：</strong> 如果你在别处看到关于「南宫28」的说法，不妨回到 <a href="https://panel-nangong28.com">南宫28</a> 本身对照确认，避免被不准确的信息误导。
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 页脚 -->
+  <div class="footer">
+    <p>本页为独立介绍页 · 内容仅供参考 · 具体以 <a href="https://panel-nangong28.com">南宫28</a> 实际页面为准</p>
+  </div>
+
+</body>
+</html>
